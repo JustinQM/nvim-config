@@ -70,6 +70,15 @@ return require('packer').startup(function(use)
         requires = "nvim-lua/plenary.nvim",
     }
 
+    --Git
+    use({
+        "kdheepak/lazygit.nvim",
+        -- optional for floating window border decoration
+        requires = {
+            "nvim-lua/plenary.nvim",
+        },
+    })
+
     --Misc
     use {'mhinz/vim-startify'} --startify
     use {'windwp/nvim-autopairs'} --auto closing brackets and etc

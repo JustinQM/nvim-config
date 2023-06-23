@@ -53,3 +53,6 @@ map('n','<leader>nr',[[:Neorg return<CR>]], opts) --return from neorg
 map('n','<leader>nh',[[:Neorg inject-metadata<CR>]], opts) --inject metadata
 map('n','<leader>ns',[[:Neorg generate-workspace-summary<CR>]], opts) --create summary
 map('n','<leader>nt',[[:Neorg toc<CR>]], opts) --opens table of contents
+
+--Lazygit
+map('n','<leader>gg',[[:LazyGit<CR>]],opts) --opens lazygit
