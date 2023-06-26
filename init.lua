@@ -45,7 +45,7 @@ require('oil').setup({use_default_keymaps=true,}) --oil
 require("nvim-treesitter.configs").setup({
     ensure_installed = {"c","lua","python","vim","vimdoc","query","cpp"},
     sync_install = false,
-    auto_isntall = true,
+    auto_install = true,
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
@@ -123,3 +123,5 @@ require('Comment').setup({ --Toggle comments
     pre_hook = nil,
     post_hook = nil,
 })
+
+require('leap').add_default_mappings() -- leap with default mappings

@@ -74,7 +74,7 @@ return require('packer').startup(function(use)
     use({
         "kdheepak/lazygit.nvim",
         -- optional for floating window border decoration
-        requires = {
+        requires = { 
             "nvim-lua/plenary.nvim",
         },
     })
@@ -87,7 +87,8 @@ return require('packer').startup(function(use)
     use { 'romgrk/barbar.nvim' } --tabbing top bar
     use { 'RRethy/vim-illuminate' } --highlights other instance of word under cursor
     use { 'numToStr/Navigator.nvim' } --adds keybinds for moving to split windows
-    use {'numToStr/Comment.nvim'}
+    use {'numToStr/Comment.nvim'} -- comment toggling
+    use {'ggandor/leap.nvim'} -- leap (leap around the file)
     
     
 end)
