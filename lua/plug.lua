@@ -21,8 +21,6 @@ return require('packer').startup(function(use)
     }
 
     use{"neovim/nvim-lspconfig"} --LSP
-    use {'codota/tabnine-nvim', run = "./dl_binaries.sh"} --tabnine
-
     --telescope
     use {'nvim-telescope/telescope.nvim', tag = '0.1.1',
         requires = { {'nvim-lua/plenary.nvim'} }
@@ -89,6 +87,7 @@ return require('packer').startup(function(use)
     use { 'numToStr/Navigator.nvim' } --adds keybinds for moving to split windows
     use {'numToStr/Comment.nvim'} -- comment toggling
     use {'ggandor/leap.nvim'} -- leap (leap around the file)
+	use {'sakhnik/nvim-gdb'} -- gdb support
     
     
 end)
