@@ -38,8 +38,12 @@ require("nvim-tree").setup({
         }
     },
 })
-
-require('oil').setup({use_default_keymaps=true,}) --oil
+  
+require('oil').setup({use_default_keymaps=true,
+	keymaps = {
+		["cd"] = "actions.cd",
+	}
+}) --oil
 
 --Treesitter
 require("nvim-treesitter.configs").setup({
@@ -115,3 +119,9 @@ require('Comment').setup({ --Toggle comments
 })
 
 require('leap').add_default_mappings() -- leap with default mappings
+
+require('toggleterm').setup({
+	open_mapping = "<leader>tt",
+	terminal_mappings = true,
+	insert_mappings = false,
+}) -- toggle term

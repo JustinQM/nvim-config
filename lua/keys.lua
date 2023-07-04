@@ -56,3 +56,7 @@ map('n','<leader>nt',[[:Neorg toc<CR>]], opts) --opens table of contents
 
 --Lazygit
 map('n','<leader>gg',":LazyGit<CR>",opts) --opens lazygit
+
+-- Clipboard
+map('n','<leader>y',"\"+y",opts)
+map('v','<leader>y',"\"+y",opts)

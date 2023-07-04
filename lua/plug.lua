@@ -88,6 +88,7 @@ return require('packer').startup(function(use)
     use {'numToStr/Comment.nvim'} -- comment toggling
     use {'ggandor/leap.nvim'} -- leap (leap around the file)
 	use {'sakhnik/nvim-gdb'} -- gdb support
+	use {'akinsho/toggleterm.nvim'}  -- toggle terminal window
     
     
 end)
