@@ -12,11 +12,12 @@ vim.g.maplocalleader = ","
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+
 -- IMPORTS
+require('plug')      -- Plugins
 require('vars')      -- Variables
 require('opts')      -- Options
 require('keys')      -- Keymaps
-require('plug')      -- Plugins
 
 --filebrowser
 require("nvim-tree").setup({  
