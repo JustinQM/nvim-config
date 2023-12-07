@@ -22,7 +22,7 @@ return require('packer').startup(function(use)
 
     use{"neovim/nvim-lspconfig"} --LSP
     --telescope
-    use {'nvim-telescope/telescope.nvim', tag = '0.1.1',
+    use {'nvim-telescope/telescope.nvim', tag = '0.1.3',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
     use {'BurntSushi/ripgrep'} --grep for telescope

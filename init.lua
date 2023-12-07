@@ -122,6 +122,6 @@ require('leap').add_default_mappings() -- leap with default mappings
 
 require('toggleterm').setup({
 	open_mapping = "<leader>tt",
-	terminal_mappings = true,
+	terminal_mappings = false,
 	insert_mappings = false,
 }) -- toggle term
