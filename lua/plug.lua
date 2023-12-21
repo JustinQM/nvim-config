@@ -60,6 +60,14 @@ return require('packer').startup(function(use)
     use {"folke/tokyonight.nvim"} --theme
     use {'nvim-lualine/lualine.nvim'} --status line
 
+
+	--macros {nvim recorder}
+	use {
+		"chrisgrieser/nvim-recorder",
+		requires = "rcarriga/nvim-notify", -- optional
+		config = function() require("recorder").setup() end,
+	}
+
     --Note taking    
     use {
         "nvim-neorg/neorg",
@@ -108,6 +116,7 @@ return require('packer').startup(function(use)
 
     --Misc
     use {'mhinz/vim-startify'} --startify
+	use {'rcarriga/nvim-notify'} --nvim notifty
     use {'windwp/nvim-autopairs'} --auto closing brackets and etc
     use {'nvim-tree/nvim-web-devicons'} --icons
     use { 'lewis6991/gitsigns.nvim' } --git status
