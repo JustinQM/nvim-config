@@ -41,6 +41,12 @@ map('n', '<A-9>', '<Cmd>BufferGoto 9<CR>', opts)
 map('n', '<A-0>', '<Cmd>BufferLast<CR>', opts)
 -- Close buffer
 map('n', '<A-w>', '<Cmd>BufferClose<CR>', opts)
+map('n', '<A-W>', '<Cmd>BufferClose!<CR>', opts)
+map('t', '<A-W>', '<Cmd>BufferClose!<CR>', opts)
+
+-- Open terminal in new buffer (vs toggle term split window default)
+map('n', '<leader>tn', [[:term<cr>]], opts) --find words
+map('t', '<leader>tn', [[:term<cr>]], opts) --find words
 
 --Navigator
 local navapi = require('Navigator')
