@@ -56,15 +56,15 @@ vim.keymap.set({'n', 't'}, '<A-k>', navapi.up)
 vim.keymap.set({'n', 't'}, '<A-j>', navapi.down)
 vim.keymap.set({'n', 't'}, '<A-p>', navapi.previous)
 
---Neorg
-map('n','<leader>nn',[[:Neorg index<CR>]], opts) --open index file
-map('n','<leader>nr',[[:Neorg return<CR>]], opts) --return from neorg
-map('n','<leader>nh',[[:Neorg inject-metadata<CR>]], opts) --inject metadata
-map('n','<leader>ns',[[:Neorg generate-workspace-summary<CR>]], opts) --create summary
-map('n','<leader>nt',[[:Neorg toc<CR>]], opts) --opens table of contents
-
 --Lazygit
 map('n','<leader>gg',":LazyGit<CR>",opts) --opens lazygit
+
+-- Compile Mode
+map('n','<leader>CC',":Compile<CR>",opts) 
+map('n','<leader>cc',":Recompile<CR>",opts) 
+map('n','<leader>cn',":NextError<CR>",opts) 
+map('n','<leader>cb',":PrevError<CR>",opts) 
+
 
 -- Clipboard
 map('n','<leader>y',"\"+y",opts)

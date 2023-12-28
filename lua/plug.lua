@@ -46,50 +46,6 @@ return require('packer').startup(function(use)
     use {'nvim-lualine/lualine.nvim'} --status line
 
 
-	--macros {nvim recorder}
-	use {
-		"chrisgrieser/nvim-recorder",
-		requires = "rcarriga/nvim-notify", -- optional
-		config = function() require("recorder").setup() end,
-	}
-
-    --Note taking    
-    use {
-        "nvim-neorg/neorg",
-        config = function()
-            require('neorg').setup {
-                load = {
-                    ["core.defaults"] = {}, -- Loads default behaviour
-                    ["core.concealer"] = { -- Concealer settings
-                        config = {
-                            icons = {
-                                code_block = {
-                                    conceal = true,
-                                    content_only = false,
-                                    width = "content",
-                                },
-                            },
-                        },
-                    },
-                    ["core.dirman"] = { -- Manages Neorg workspaces
-                    config = 
-                        {
-                            workspaces = 
-                            {
-                                notes = "~/.notes",
-                            },
-                            default_workspace = "notes",
-                        },
-                    },
-                    ["core.qol.toc"] = { config = { close_after_use = true }},
-                    ["core.summary"] = {},
-                },
-            }
-        end,
-        run = ":Neorg sync-parsers",
-        requires = "nvim-lua/plenary.nvim",
-    }
-
     --Git
     use({
         "kdheepak/lazygit.nvim",
@@ -98,7 +54,16 @@ return require('packer').startup(function(use)
             "nvim-lua/plenary.nvim",
         },
     })
-
+    use({
+        "ej-shafran/compile-mode.nvim",
+        requires = { 
+            "nvim-lua/plenary.nvim",
+			{ "m00qek/baleia.nvim", tag = "v1.3.0" },
+        },
+		opts = {
+			default_command = "make"
+		}
+    })
     --Misc
     use {'mhinz/vim-startify'} --startify
 	use {'rcarriga/nvim-notify'} --nvim notifty
