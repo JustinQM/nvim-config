@@ -19,7 +19,6 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     --filebrowser
-    use {'nvim-tree/nvim-tree.lua'}
     use {'stevearc/oil.nvim'}
 
     --autocomplete

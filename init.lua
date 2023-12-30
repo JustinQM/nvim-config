@@ -19,27 +19,8 @@ require('opts')      -- Options
 require('keys')      -- Keymaps
 
 --filebrowser
-require("nvim-tree").setup({  
-    sort_by = "case_sensitive",
-    view = {
-        width = 30,
-    },
-    renderer = {
-        group_empty = true,
-    },
-    filters = {
-        dotfiles = true,
-    },
-    actions = {
-        open_file = {
-            window_picker = {
-                enable = false,
-            }
-        }
-    },
-})
-  
 require('oil').setup({use_default_keymaps=true,
+	skip_confirm_for_simple_edits = true,
 	keymaps = {
 		["cd"] = "actions.cd",
 	}
@@ -75,9 +56,11 @@ require('tokyonight').setup({
 })
 
 -- MISC
+require('barbar').setup({ --tabbing top bar
+	exclude_ft = {'compilation'}, --excluded filetypes from bar
+}) 
 require('lualine').setup()
 require('nvim-autopairs').setup({ map_bs = false, map_cr = false }) --autoclosing brackets etc
-require('barbar').setup() --tabbing top bar
 require('Navigator').setup() --keybinds for switching between buffers
 require('Comment').setup({ --Toggle comments 
     sticky = true,

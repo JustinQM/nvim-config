@@ -9,9 +9,6 @@ map('t', 'jk', '<C-\\><C-n>', opts)
 map('t', 'jj', '<C-\\><C-n>', opts)
 map('t', '<ESC>', '<C-\\><C-n>', opts)
 
---nvimtree
-map('n', '<leader>w', [[:NvimTreeToggle<cr>]], opts) --toggle
-
 --oil
 map('n', '<leader>e', [[:Oil<cr>]], opts) --toggle
 
