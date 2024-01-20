@@ -28,8 +28,16 @@ require('oil').setup({use_default_keymaps=true,
 }) --oil
 
 --Treesitter
+
+require('nvim-treesitter.parsers').get_parser_configs().asm = {
+    install_info = {
+        url = 'https://github.com/rush-rs/tree-sitter-asm.git',
+        files = { 'src/parser.c' },
+        branch = 'main',
+    },
+}
 require("nvim-treesitter.configs").setup({
-    ensure_installed = {"c","lua","python","vim","vimdoc","query","cpp"},
+    ensure_installed = {"c","lua","python","vim","vimdoc","query","cpp","asm"},
     sync_install = false,
     auto_install = true,
     highlight = {

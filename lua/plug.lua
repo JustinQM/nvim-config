@@ -40,7 +40,9 @@ return require('packer').startup(function(use)
     use {'ms-jpq/coq_nvim', branch = 'coq'} --coq
     use {'ms-jpq/coq.artifacts', branch = 'artifacts'}
 
-    use { --treesitter
+	--treesitter
+	use { 'rush-rs/tree-sitter-asm' }
+    use {
         'nvim-treesitter/nvim-treesitter',
         run = function()
             local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
