@@ -1,4 +1,0 @@
-needed plugins:
-
-some sort of LSP and autocomplete
-treesitter? what is mason?
