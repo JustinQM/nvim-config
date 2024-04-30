@@ -3,6 +3,7 @@ local opt = vim.opt
 -- [[ Context ]]
 --opt.colorcolumn = '80'           -- str:  Show col for max line length
 opt.relativenumber = true        -- bool: Show relative line numbers
+opt.number = true                --bool: Show exact line number on current line
 opt.scrolloff = 4                -- int:  Min num lines of context
 opt.signcolumn = "no"           -- str:  Show the sign column
 
@@ -34,3 +35,17 @@ opt.splitbelow = true            -- bool: Place new window below the current one
 
 -- [[General Settings]]
 vim.cmd([[set timeoutlen=500]])  -- sets timeout of commands
+
+-- [[Diagnostic LSP Settings]]
+vim.diagnostic.config({
+	--only show virtual text on errors
+	virtual_text = {
+		severity = { min = vim.diagnostic.severity.ERROR }
+	},
+	--underline warnings
+	underline = {
+		severity = {  min = vim.diagnostic.severity.WARN }
+	},
+	virtual_lines = false,
+	signs = true,
+})
