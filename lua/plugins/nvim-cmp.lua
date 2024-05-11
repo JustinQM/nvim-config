@@ -1,0 +1,86 @@
+return {
+	{
+		"hrsh7th/cmp-nvim-lsp",
+	},
+	{
+		"L3MON4D3/LuaSnip",
+		lazy = true,
+	},
+	{
+		"saadparwaiz1/cmp_luasnip",
+		lazy = true,
+	},
+	{
+		'hrsh7th/cmp-buffer',
+		lazy = true,
+	},
+	{
+		'hrsh7th/cmp-path',
+		lazy = true,
+	},
+	{
+		"hrsh7th/nvim-cmp",
+		event = "InsertEnter", --load cmp when you enter insert mode
+		dependencies  = {"L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",'hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline'},
+		opts = function()
+			local luasnip = require("luasnip")
+			local cmp = require("cmp")
+				cmp.setup{
+				snippet = {
+					expand = function(args)
+						luasnip.lsp_expand(args.body)
+					end,
+				},
+				mapping = { --MAPPINGS START
+					['<CR>'] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							if luasnip.expandable() then
+								luasnip.expand()
+							else
+								cmp.confirm({
+									select = true,
+								})
+							end
+						else
+							fallback()
+						end
+					end),
+
+					["<Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_next_item()
+						elseif luasnip.locally_jumpable(1) then
+							luasnip.jump(1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+
+					["<S-Tab>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						elseif luasnip.locally_jumpable(-1) then
+							luasnip.jump(-1)
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+				}, --MAPPINGS END
+				window = {
+					completion = cmp.config.window.bordered({
+							winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+					}),	
+					documentation = cmp.config.window.bordered({
+						winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+					}),
+				},
+				sources = {
+					{ name = "nvim_lsp", max_item_count = 3 },
+					{ name = "luasnip", max_item_count = 1 },
+					{ name = "buffer", max_item_count = 2 },
+					{ name = "path" , max_item_count = 10 },
+				},
+			}
+		end,
+	}
+}
