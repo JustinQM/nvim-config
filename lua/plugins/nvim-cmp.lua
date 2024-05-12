@@ -2,9 +2,14 @@ return {
 	{
 		"hrsh7th/cmp-nvim-lsp",
 	},
+	{ 
+		"rafamadriz/friendly-snippets", --snippets used in luasnip
+		lazy = true,
+	},
 	{
 		"L3MON4D3/LuaSnip",
 		lazy = true,
+		dependencies = { "rafamadriz/friendly-snippets" },
 	},
 	{
 		"saadparwaiz1/cmp_luasnip",
@@ -23,6 +28,7 @@ return {
 		event = "InsertEnter", --load cmp when you enter insert mode
 		dependencies  = {"L3MON4D3/LuaSnip", "saadparwaiz1/cmp_luasnip",'hrsh7th/cmp-buffer','hrsh7th/cmp-path','hrsh7th/cmp-cmdline'},
 		opts = function()
+			require("luasnip.loaders.from_vscode").lazy_load()
 			local luasnip = require("luasnip")
 			local cmp = require("cmp")
 				cmp.setup{
@@ -75,10 +81,10 @@ return {
 					}),
 				},
 				sources = {
-					{ name = "nvim_lsp", max_item_count = 3 },
-					{ name = "luasnip", max_item_count = 1 },
-					{ name = "buffer", max_item_count = 2 },
-					{ name = "path" , max_item_count = 10 },
+					{ name = "path"},
+					{ name = "nvim_lsp", max_item_count = 3, keyword_length = 1 },
+					{ name = "buffer", max_item_count = 2, keyword_length = 3 },
+					{ name = "luasnip", max_item_count = 1, keyword_length = 2},
 				},
 			}
 		end,

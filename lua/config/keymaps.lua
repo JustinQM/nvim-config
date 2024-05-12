@@ -8,6 +8,10 @@ local opts = {noremap = true, silent = true}
 --map jk to escape and shorten timeout
 map('i', 'jk', '<ESC>', opts)
 
+--ash_script
+
+vim.keymap.set({'n','v'}, 'g?/', '<Cmd>lua require("scripts.ash_encode").vim_encode()<CR>')
+
 --map leader and localleader
 vim.g.mapleader = " " 
 vim.g.maplocalleader = "\\" 
