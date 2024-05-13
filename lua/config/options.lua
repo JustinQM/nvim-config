@@ -52,3 +52,11 @@ vim.diagnostic.config({
 	virtual_lines = false,
 	signs = true,
 })
+
+--Todo Highlights
+vim.fn.matchadd("DiagnosticInfo", "\\(TODO:\\)")
+vim.fn.matchadd("DiagnosticHint", "\\(NOTE:\\)")
+vim.fn.matchadd("DiagnosticWarn", "\\(WARN:\\)")
+vim.fn.matchadd("DiagnosticWarn", "\\(WARNING:\\)")
+vim.fn.matchadd("DiagnosticWarn", "\\(HACK:\\)")
+vim.fn.matchadd("DiagnosticError", "\\(FIX:\\)")

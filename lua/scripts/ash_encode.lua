@@ -60,7 +60,7 @@ function M.vim_encode()
 			local slice = string.sub(v, vstart_col,slice_ending)
 			slice = M.encode(slice)
 			v = string.sub(v,0,vstart_col-1) .. slice .. string.sub(v,vstart_col + string.len(slice))
-		elseif k == total_lines then --end
+		elseif k == total_lines then --last line in selection
 			local slice = string.sub(v, 1, vend_col)
 			slice = M.encode(slice)
 			if 2^31-1 == vend_col then
@@ -102,6 +102,5 @@ function M.encode(x)
         return orig
 
     end)})[1]
-
 end
 return M
