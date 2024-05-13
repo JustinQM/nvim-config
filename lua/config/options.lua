@@ -35,6 +35,9 @@ opt.splitbelow = true            -- bool: Place new window below the current one
 
 -- [[General Settings]]
 vim.cmd([[set timeoutlen=500]])  -- sets timeout of commands
+vim.cmd([[colorscheme monokai-pro]])
+vim.cmd([[hi LineNr guibg=none guifg=#ff7185]]) --sets relative line numbers background to transparent
+-- vim.cmd([[hi LineNr guibg=none guifg=#fd915d]]) --sets relative line numbers background to transparent
 
 -- [[Diagnostic LSP Settings]]
 vim.diagnostic.config({
