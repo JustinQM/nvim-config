@@ -15,6 +15,7 @@ opt.fileencoding = 'utf8'        -- str:  File encoding to use
 opt.syntax = "ON"                       -- str:  Allow syntax highlighting
 opt.termguicolors = true                -- bool: If term supports ui color then enable
 vim.api.nvim_command('set cmdheight=1') -- forces status bar to be 1 character tall
+vim.api.nvim_command('set conceallevel=2')
 opt.showmode = false                    -- disables showmode to reduce redundant messages
 
 -- [[ Search ]]
@@ -53,7 +54,7 @@ vim.diagnostic.config({
 	signs = true,
 })
 
---Todo Highlights
+-- [[Todo Highlights]]
 vim.fn.matchadd("DiagnosticInfo", "\\(TODO:\\)")
 vim.fn.matchadd("DiagnosticHint", "\\(NOTE:\\)")
 vim.fn.matchadd("DiagnosticWarn", "\\(WARN:\\)")
