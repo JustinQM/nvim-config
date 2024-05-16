@@ -18,7 +18,7 @@ return {
 		vim.keymap.set('n', '<leader>off', '<CMD>ObsidianQuickSwitch<CR>')
 		vim.keymap.set('n', '<leader>ofg', '<CMD>ObsidianSearch<CR>')
 		vim.keymap.set('n', '<leader>oft', '<CMD>ObsidianTags<CR>')
-		vim.keymap.set('n', '<leader>ofd', '<CMD>ObsidianDailies -4 1<CR>')
+		vim.keymap.set('n', '<leader>ofd', '<CMD>ObsidianDailies -3 3<CR>')
 		vim.keymap.set('n', '<leader>ofl', '<CMD>ObsidianLinks<CR>')
 		vim.keymap.set('n', '<leader>ofr', '<CMD>ObsidianBacklinks<CR>')
 	end,
