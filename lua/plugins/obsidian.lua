@@ -1,3 +1,6 @@
+--commented out for now since I am not using obsidian
+return {}
+--[[
 return {
 	"epwalsh/obsidian.nvim",
 	version = "*",  -- recommended, use latest release instead of latest commit
@@ -83,4 +86,4 @@ return {
 			return tostring(suffix .. "-" .. os.time())
 		end,
 	},
-}
+} ]] 

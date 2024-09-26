@@ -38,6 +38,8 @@ return {
 					end,
 				},
 				mapping = { --MAPPINGS START
+					['<C-Space>'] = cmp.mapping.complete(),
+
 					['<CR>'] = cmp.mapping(function(fallback)
 						if cmp.visible() and cmp.get_active_entry() then
 							if luasnip.expandable() then
@@ -53,24 +55,41 @@ return {
 					end),
 
 					["<Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_next_item()
-						elseif luasnip.locally_jumpable(1) then
+						if luasnip.locally_jumpable(1) then
 							luasnip.jump(1)
+						elseif cmp.visible() then
+							cmp.select_next_item()
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
 
 					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if cmp.visible() then
-							cmp.select_prev_item()
-						elseif luasnip.locally_jumpable(-1) then
+						if luasnip.locally_jumpable(-1) then
 							luasnip.jump(-1)
+						elseif cmp.visible() then
+							cmp.select_prev_item()
 						else
 							fallback()
 						end
 					end, { "i", "s" }),
+
+					["<A-j>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_next_item()
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+
+					["<A-k>"] = cmp.mapping(function(fallback)
+						if cmp.visible() then
+							cmp.select_prev_item()
+						else
+							fallback()
+						end
+					end, { "i", "s" }),
+
 				}, --MAPPINGS END
 				window = {
 					completion = cmp.config.window.bordered({
