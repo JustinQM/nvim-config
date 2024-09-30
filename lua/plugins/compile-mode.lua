@@ -15,4 +15,11 @@ return {
 		vim.api.nvim_set_keymap('n','<leader>cn',":NextError<CR>",opts) 
 		vim.api.nvim_set_keymap('n','<leader>cb',":PrevError<CR>",opts) 
 	end,
+	config = function()
+    ---@type CompileModeOpts
+    vim.g.compile_mode = {
+        -- to add ANSI escape code support, add:
+        baleia_setup = true,
+    }
+  end
 }
