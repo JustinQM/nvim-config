@@ -35,6 +35,8 @@ opt.splitright = true            -- bool: Place new window to right of current o
 opt.splitbelow = true            -- bool: Place new window below the current one
 
 -- [[General Settings]]
+vim.g["surround_no_mappings"] = 1
+vim.cmd([[set clipboard=unnamedplus]])
 vim.cmd([[set timeoutlen=500]])  -- sets timeout of commands
 vim.cmd([[colorscheme monokai-pro]])
 vim.cmd([[hi LineNr guibg=none guifg=#ff7185]]) --sets relative line numbers background to transparent
